@@ -1,0 +1,41 @@
+cabal-version: 3.0
+name: dear-filedialog
+version: 1.0.0
+build-type: Simple
+
+library
+  exposed-modules:
+    DearImGui.FileDialog
+  hs-source-dirs:
+    src
+  default-language:
+    Haskell2010
+  ghc-options:
+    -Wall
+  cxx-sources:
+    ImGuiFileDialog/ImGuiFileDialog.cpp
+  cxx-options:
+    -std=c++11
+  extra-libraries:
+    stdc++
+  include-dirs:
+    ImGuiFileDialog
+    imgui
+  build-depends: base
+               , StateVar
+               , containers
+               , dear-imgui
+               , inline-c
+               , inline-c-cpp
+               , managed
+
+executable test
+  main-is: Main.hs
+  default-language: Haskell2010
+  build-depends: base
+               , dear-imgui
+               , dear-filedialog
+               , gl
+               , managed
+               , GLFW-b
+  ghc-options: -Wall

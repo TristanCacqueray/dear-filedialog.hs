@@ -65,7 +65,7 @@ mainLoop win = do
     bracket_ (begin "Hello, ImGui!") end do
       button "Open File Dialog" >>= \case
         False -> return ()
-        True -> ImFD.openDialog "ChooseFileDlgKey" "Choose File" ".hs,.cabal" "."
+        True -> ImFD.openDialog "ChooseFileDlgKey" "Choose File" ".hs,.cabal" "." 0
 
       ImFD.display "ChooseFileDlgKey" >>= \case
         False -> return ()
@@ -74,7 +74,8 @@ mainLoop win = do
             False -> return ()
             True -> do
               selection <- ImFD.getSelection
-              putStrLn $ "Selection: " <> selection
+              putStrLn "Selection: "
+              mapM_ putStrLn selection
 
           ImFD.close
     -- Render

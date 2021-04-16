@@ -62,7 +62,7 @@ mainLoop win = do
     newFrame
 
     -- Build the GUI
-    bracket_ (begin "Hello, ImGui!") end do
+    withWindowOpen "Hello, ImGui!" do
       button "Open File Dialog" >>= \case
         False -> return ()
         True -> ImFD.openDialog "ChooseFileDlgKey" "Choose File" ".hs,.cabal" "." 0

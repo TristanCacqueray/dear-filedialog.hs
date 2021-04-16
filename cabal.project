@@ -1,2 +1,0 @@
-packages: . ../../haskell-game/dear-imgui.hs/
-flags: -sdl +glfw +opengl3

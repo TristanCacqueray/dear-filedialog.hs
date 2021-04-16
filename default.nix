@@ -8,8 +8,8 @@ let
       (nixpkgs.fetchFromGitHub {
         owner = "haskell-game";
         repo = "dear-imgui.hs";
-        rev = "3949882060c2677410c152989d7bb54f23ee34d7";
-        sha256 = "0vc2681x3cp1pxjfhcpgxh15ycaxfrs8mww7g8hgcsmymazscbj0";
+        rev = "fad17edb069a1b2f8dc40e83b99681ccccb237c9";
+        sha256 = "1kn1xxx46f4g59khj6b07lrkwv4amsld7w8sp2w34ak8krzk7sq6";
         fetchSubmodules = true;
       }) "--flag=-sdl --flag=glfw --flag=opengl3" { };
   });
